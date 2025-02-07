@@ -1,0 +1,56 @@
+{
+  "sorted_middleware": [],
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/_139c62._.js",
+        "server/edge/chunks/[root of the server]__bf731b._.js",
+        "server/edge/chunks/edge-wrapper_c7185c.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*){(\\\\.json)}?",
+          "originalSource": "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)"
+        }
+      ],
+      "wasm": [],
+      "assets": [
+        {
+          "name": "server/edge/chunks/_139c62._.js.map",
+          "filePath": "server/edge/chunks/_139c62._.js.map"
+        },
+        {
+          "name": "server/edge/chunks/_139c62._.js",
+          "filePath": "server/edge/chunks/_139c62._.js"
+        },
+        {
+          "name": "server/edge/chunks/[root of the server]__bf731b._.js.map",
+          "filePath": "server/edge/chunks/[root of the server]__bf731b._.js.map"
+        },
+        {
+          "name": "server/edge/chunks/[root of the server]__bf731b._.js",
+          "filePath": "server/edge/chunks/[root of the server]__bf731b._.js"
+        },
+        {
+          "name": "server/edge/chunks/edge-wrapper_c7185c.js.map",
+          "filePath": "server/edge/chunks/edge-wrapper_c7185c.js.map"
+        },
+        {
+          "name": "server/edge/chunks/edge-wrapper_c7185c.js",
+          "filePath": "server/edge/chunks/edge-wrapper_c7185c.js"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "c7GvxhhoJfb8SLmc/qJ7chVPG2MpynEbPKdZE2jBFhg=",
+        "__NEXT_PREVIEW_MODE_ID": "dfb67ffd20be50f69ba2466a78e26b4a",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "8dec9934e41e829cb31ced7326f44060895fcbbf8adeec55edb7260a3a47df63",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "873be68c686a2327ab0a1eb21b24ef54cf45a74a693a2aa06185a7cdcbf7f094"
+      }
+    }
+  },
+  "instrumentation": null,
+  "functions": {}
+}

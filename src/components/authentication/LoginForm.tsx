@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useId, useState } from 'react'
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -14,6 +14,10 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
+import { login } from '@/app/actions/auth-actions'
+import { redirect } from 'next/navigation'
+import { Loader2 } from 'lucide-react'
 
 const formSchema = z.object({
     email: z.string().email({
@@ -25,6 +29,11 @@ const formSchema = z.object({
   })
 
 const LoginForm = ({className}:{className?: string}) => {
+
+    const toastId = useId();
+    const [loading, setLoading] = useState(false)
+
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -33,9 +42,26 @@ const LoginForm = ({className}:{className?: string}) => {
         },
       })
 
-      function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
+      async function onSubmit(values: z.infer<typeof formSchema>) {
+        toast.loading('Signing in...', {id: toastId})
+        setLoading(true)
+
+        const formData = new FormData()
+        formData.append('email', values.email)
+        formData.append('password', values.password)
+
+        const{success, error} = await login(formData) 
+
+        if(success){
+            toast.success('Signed in successfully!', {id: toastId})
+            setLoading(false)
+            redirect('/dashboard')
+        }
+        else{
+            toast.error(String(error), {id: toastId})
+        }
+
+       
         console.log(values)
         }
      
@@ -69,7 +95,9 @@ const LoginForm = ({className}:{className?: string}) => {
             </FormItem>
           )}
         />
-        <Button type="submit"className='w-full' >Log in</Button>
+         <Button type="submit"className='w-full' disabled={loading}>
+            {loading && <Loader2 className='mr-2 h-4 w-4 animate-spin'/>}
+            Login</Button>
       </form>
     </Form>
     </div>
