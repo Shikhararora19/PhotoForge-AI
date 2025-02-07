@@ -1629,6 +1629,14 @@ body {
   font-weight: 600;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
 .tabular-nums {
   --tw-numeric-spacing: tabular-nums;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
@@ -1700,6 +1708,10 @@ body {
 
 .text-muted {
   color: hsl(var(--muted));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .underline-offset-4 {
@@ -2046,6 +2058,10 @@ body {
 
 .hover\:text-sidebar-accent-foreground:hover {
   color: hsl(var(--sidebar-accent-foreground));
+}
+
+.hover\:text-primary:hover {
+  color: hsl(var(--primary));
 }
 
 .hover\:underline:hover {
