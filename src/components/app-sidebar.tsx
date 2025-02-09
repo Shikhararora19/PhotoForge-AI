@@ -30,7 +30,7 @@ export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sideb
 
   const user = {
     name: data.user?.user_metadata.full_name,
-    email: data.user?.email,
+    email: data.user?.email || "",
   }
   return (
     <Sidebar collapsible="icon" {...props}>
