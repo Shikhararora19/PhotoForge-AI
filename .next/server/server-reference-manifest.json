@@ -21,6 +21,17 @@
       "layer": {
         "app/login/page": "action-browser"
       }
+    },
+    "00743bc3c7f82e789a85be88cbc1cbd03fce8ad06c": {
+      "workers": {
+        "app/login/page": {
+          "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/login/page": "action-browser"
+      }
     }
   },
   "edge": {},

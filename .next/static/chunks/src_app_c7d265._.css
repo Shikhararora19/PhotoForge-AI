@@ -721,8 +721,16 @@ body {
   margin-top: auto;
 }
 
+.-ml-1 {
+  margin-left: -.25rem;
+}
+
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -757,6 +765,11 @@ body {
 .size-8 {
   width: 2rem;
   height: 2rem;
+}
+
+.size-6 {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .h-1\.5 {
@@ -855,6 +868,10 @@ body {
   height: 100svh;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -873,6 +890,10 @@ body {
 
 .min-h-svh {
   min-height: 100svh;
+}
+
+.min-h-\[100vh\] {
+  min-height: 100vh;
 }
 
 .w-0 {
@@ -967,6 +988,14 @@ body {
   width: 1px;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
+.w-\[--radix-dropdown-menu-trigger-width\] {
+  width: var(--radix-dropdown-menu-trigger-width);
+}
+
 .min-w-0 {
   min-width: 0;
 }
@@ -985,6 +1014,10 @@ body {
 
 .min-w-\[var\(--radix-select-trigger-width\)\] {
   min-width: var(--radix-select-trigger-width);
+}
+
+.min-w-56 {
+  min-width: 14rem;
 }
 
 .max-w-\[--skeleton-width\] {
@@ -1115,6 +1148,10 @@ body {
   list-style-type: none;
 }
 
+.auto-rows-min {
+  grid-auto-rows: min-content;
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1233,6 +1270,12 @@ body {
   overflow: hidden;
 }
 
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1267,6 +1310,14 @@ body {
 
 .rounded-sm {
   border-radius: calc(var(--radius)  - 4px);
+}
+
+.rounded-xl {
+  border-radius: .75rem;
+}
+
+.rounded-none {
+  border-radius: 0;
 }
 
 .rounded-t-\[10px\] {
@@ -1417,6 +1468,14 @@ body {
 
 .bg-transparent {
   background-color: #0000;
+}
+
+.bg-muted\/50 {
+  background-color: hsl(var(--muted) / .5);
+}
+
+.bg-sidebar-primary {
+  background-color: hsl(var(--sidebar-primary));
 }
 
 .bg-gradient-to-b {
@@ -1654,6 +1713,10 @@ body {
   line-height: 1;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
 .tracking-tight {
   letter-spacing: -.025em;
 }
@@ -1712,6 +1775,10 @@ body {
 
 .text-sidebar-foreground\/70 {
   color: hsl(var(--sidebar-foreground) / .7);
+}
+
+.text-sidebar-primary-foreground {
+  color: hsl(var(--sidebar-primary-foreground));
 }
 
 .underline {
@@ -1862,6 +1929,12 @@ body {
 
 .transition-transform {
   transition-property: transform;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+}
+
+.transition-\[width\,height\] {
+  transition-property: width, height;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-duration: .15s;
 }
@@ -2237,6 +2310,10 @@ body {
   opacity: .5;
 }
 
+.group\/sidebar-wrapper:has([data-collapsible="icon"]) .group-has-\[\[data-collapsible\=icon\]\]\/sidebar-wrapper\:h-12 {
+  height: 3rem;
+}
+
 .group\/menu-item:has([data-sidebar="menu-action"]) .group-has-\[\[data-sidebar\=menu-action\]\]\/menu-item\:pr-8 {
   padding-right: 2rem;
 }
@@ -2351,6 +2428,10 @@ body {
   background-color: hsl(var(--input));
 }
 
+.data-\[state\=open\]\:bg-sidebar-accent[data-state="open"] {
+  background-color: hsl(var(--sidebar-accent));
+}
+
 .data-\[active\=true\]\:font-medium[data-active="true"] {
   font-weight: 500;
 }
@@ -2369,6 +2450,10 @@ body {
 
 .data-\[state\=open\]\:text-muted-foreground[data-state="open"] {
   color: hsl(var(--muted-foreground));
+}
+
+.data-\[state\=open\]\:text-sidebar-accent-foreground[data-state="open"] {
+  color: hsl(var(--sidebar-accent-foreground));
 }
 
 .data-\[disabled\]\:opacity-50[data-disabled] {
@@ -2666,6 +2751,11 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.group\/collapsible[data-state="open"] .group-data-\[state\=open\]\/collapsible\:rotate-90 {
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .group[data-collapsible="icon"] .group-data-\[collapsible\=icon\]\:overflow-hidden {
   overflow: hidden;
 }
@@ -2843,12 +2933,20 @@ body {
     display: flex;
   }
 
+  .md\:min-h-min {
+    min-height: min-content;
+  }
+
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
     width: var(--radix-navigation-menu-viewport-width);
   }
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:text-sm {

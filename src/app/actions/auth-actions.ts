@@ -1,5 +1,6 @@
 'use server'
 import { createClient } from '@/lib/supabase/server'
+import { redirect } from 'next/navigation';
 
 interface AuthResponse {
     error: null|string,
@@ -46,5 +47,18 @@ export async function login(formData: FormData): Promise<AuthResponse>{
         error: error?.message || "there was an error logging up",
         success: !error,
         data: signinData||null,
+    }
+}
+
+export async function logout(): Promise<AuthResponse>{
+    const supabase = await createClient();
+
+    const { error } = await supabase.auth.signOut();
+    redirect('/login')
+
+    return{
+        error: error?.message || "there was an error logging out",
+        success: !error,
+        data: null,
     }
 }
