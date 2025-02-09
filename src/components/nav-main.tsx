@@ -2,40 +2,77 @@
 
 import {type LucideIcon } from "lucide-react"
 import {
+  AudioWaveform,
+  BookOpen,
+  Bot,
+  ChevronsUpDown,
+  Command,
+  CreditCard,
+  Frame,
+  GalleryVerticalEnd,
+  Image,
+  Layers,
+  Map,
+  PieChart,
+  Settings2,
+  Settings2Icon,
+  Sparkles,
+  SquareTerminal,
+} from "lucide-react"
+import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 
-export function NavMain({
-  items,
-}: {
-  items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
-    items?: {
-      title: string
-      url: string
-    }[]
-  }[]
-}) {
+const navItems =[
+  {
+    title: "Dashboard",
+    url: "/dashboard",
+    icon: SquareTerminal
+  },
+  {
+    title: "Generate Image",
+    url: "/image-generation",
+    icon: Image
+  },
+  {
+    title: "My Models",
+    url: "/models",
+    icon: Frame
+  },
+  {
+    title: "Train Model",
+    url: "/model-training",
+    icon: Layers
+  },
+  {
+    title: "Billing",
+    url: "/billing",
+    icon: CreditCard
+  },
+  {
+    title: "Settings",
+    url: "/account-settings",
+    icon: Settings2Icon
+  },
+
+
+
+]
+
+
+export function NavMain() {
 
   const pathname = usePathname()
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
       <SidebarMenu>
-        {items.map((item) => (
+        {navItems.map((item) => (
            <Link key={item.title} href={item.url} className={cn('rounded-none',
             item.url === pathname ? 'text-primary bg-primary-5' : 'text-muted-foreground'
            )}>
@@ -44,18 +81,6 @@ export function NavMain({
                 {item.icon && <item.icon />}
                 <span>{item.title}</span>
               </SidebarMenuButton>
-            
-              <SidebarMenuSub>
-                {item.items?.map((subItem) => (
-                  <SidebarMenuSubItem key={subItem.title}>
-                    <SidebarMenuSubButton asChild>
-                      <a href={subItem.url}>
-                        <span>{subItem.title}</span>
-                      </a>
-                    </SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                ))}
-              </SidebarMenuSub>
             </Link>
       ))}
       </SidebarMenu>

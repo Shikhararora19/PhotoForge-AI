@@ -5,10 +5,25 @@
         "app/login/page": {
           "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/billing/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/(dashboard)/account-settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/account-settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/(dashboard)/model-training/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/model-training/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
-        "app/login/page": "action-browser"
+        "app/login/page": "action-browser",
+        "app/(dashboard)/billing/page": "action-browser",
+        "app/(dashboard)/account-settings/page": "action-browser",
+        "app/(dashboard)/model-training/page": "action-browser"
       }
     },
     "40971d3f923f5aff75e86b933c961e459a6b3f91a4": {
@@ -16,10 +31,25 @@
         "app/login/page": {
           "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/billing/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/(dashboard)/account-settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/account-settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/(dashboard)/model-training/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/model-training/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
-        "app/login/page": "action-browser"
+        "app/login/page": "action-browser",
+        "app/(dashboard)/billing/page": "action-browser",
+        "app/(dashboard)/account-settings/page": "action-browser",
+        "app/(dashboard)/model-training/page": "action-browser"
       }
     },
     "00743bc3c7f82e789a85be88cbc1cbd03fce8ad06c": {
@@ -27,10 +57,25 @@
         "app/login/page": {
           "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/billing/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/(dashboard)/account-settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/account-settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/(dashboard)/model-training/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/model-training/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
-        "app/login/page": "action-browser"
+        "app/login/page": "action-browser",
+        "app/(dashboard)/billing/page": "action-browser",
+        "app/(dashboard)/account-settings/page": "action-browser",
+        "app/(dashboard)/model-training/page": "action-browser"
       }
     }
   },

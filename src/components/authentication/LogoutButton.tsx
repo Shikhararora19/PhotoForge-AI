@@ -9,7 +9,7 @@ const LogoutButton = () => {
         await logout()
     }
   return (
-    <span onClick={handleLogout} className='inline-block w-full cursor-pointer text-destructive'>LogoutButton</span>
+    <span onClick={handleLogout} className='inline-block w-full cursor-pointer text-destructive'>Log out</span>
   
 )
 }

@@ -1,23 +1,7 @@
-"use client"
 
 import * as React from "react"
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  ChevronsUpDown,
-  Command,
-  CreditCard,
-  Frame,
-  GalleryVerticalEnd,
-  Image,
-  Layers,
-  Map,
-  PieChart,
-  Settings2,
-  Settings2Icon,
   Sparkles,
-  SquareTerminal,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -34,45 +18,20 @@ import {
 } from "@/components/ui/sidebar"
 import { title } from "process"
 import { url } from "inspector"
+import { createClient } from "@/lib/supabase/server"
 
 // This is sample data.
-const data =[
-    {
-      title: "Dashboard",
-      url: "/dashboard",
-      icon: SquareTerminal
-    },
-    {
-      title: "Generate Image",
-      url: "/image-generation",
-      icon: Image
-    },
-    {
-      title: "My Models",
-      url: "/models",
-      icon: Frame
-    },
-    {
-      title: "Train Model",
-      url: "/model-training",
-      icon: Layers
-    },
-    {
-      title: "Billing",
-      url: "/billing",
-      icon: CreditCard
-    },
-    {
-      title: "Settings",
-      url: "/account-settings",
-      icon: Settings2Icon
-    },
 
+export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const supabase = await createClient();
+  const { data} = await supabase.auth.getUser();
 
+  console.log(data)
 
-  ]
-
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const user = {
+    name: data.user?.user_metadata.full_name,
+    email: data.user?.email,
+  }
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -92,10 +51,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data} />
+        <NavMain />
       </SidebarContent>
       <SidebarFooter>
-        {/* <NavUser user={data.user} /> */}
+        <NavUser user={user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
