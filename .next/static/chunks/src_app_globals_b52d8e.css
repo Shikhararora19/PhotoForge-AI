@@ -607,8 +607,17 @@ body {
   margin-bottom: .25rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .-ml-1 {
   margin-left: -.25rem;
+}
+
+.-ml-2 {
+  margin-left: -.5rem;
 }
 
 .-ml-4 {
@@ -657,10 +666,6 @@ body {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.-ml-2 {
-  margin-left: -.5rem;
 }
 
 .block {
@@ -794,6 +799,10 @@ body {
   height: auto;
 }
 
+.h-fit {
+  height: fit-content;
+}
+
 .h-full {
   height: 100%;
 }
@@ -922,6 +931,10 @@ body {
   width: auto;
 }
 
+.w-fit {
+  width: fit-content;
+}
+
 .w-full {
   width: 100%;
 }
@@ -932,10 +945,6 @@ body {
 
 .w-px {
   width: 1px;
-}
-
-.w-fit {
-  width: fit-content;
 }
 
 .min-w-0 {
@@ -960,6 +969,10 @@ body {
 
 .min-w-\[var\(--radix-select-trigger-width\)\] {
   min-width: var(--radix-select-trigger-width);
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .max-w-\[--skeleton-width\] {
@@ -1733,10 +1746,6 @@ body {
   color: hsl(var(--sidebar-primary-foreground));
 }
 
-.text-muted {
-  color: hsl(var(--muted));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -1961,6 +1970,12 @@ body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (width >= 1500px) {
+  .container {
+    max-width: 1400px;
+  }
 }
 
 .file\:border-0::file-selector-button {
