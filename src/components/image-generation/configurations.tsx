@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -33,9 +33,11 @@ import {
   } from "@/components/ui/select"
 import { Textarea } from '../ui/textarea'
 import { Info } from 'lucide-react'
+import { generateImageAction } from '@/app/actions/image-actions'
+import useGeneratedStore from '@/store/useGeneratedStore'
 
 
-const formSchema = z.object({
+export const ImageGenerationformSchema = z.object({
   model: z.string({
     required_error: "Model is required",
   }),
@@ -63,8 +65,10 @@ const formSchema = z.object({
 })
 
 const Configurations = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const generateImage = useGeneratedStore((state) => state.generateImage)
+
+    const form = useForm<z.infer<typeof ImageGenerationformSchema>>({
+        resolver: zodResolver(ImageGenerationformSchema),
         defaultValues: {
           model: "black-forest-labs/flux-dev",
             prompt: "",
@@ -77,10 +81,30 @@ const Configurations = () => {
 
         },
       })
+    
+    useEffect(() => {
+        const subscription = form.watch((value, { name }) => {
+            if (name === 'model'){
+                let newSteps
+
+                if (value.model === 'black-forest-labs/flux-schnell'){
+                    newSteps = 4
+                }
+                else{
+                    newSteps = 28
+                }
+                if (newSteps !== undefined){
+                    form.setValue('num_inference_steps', newSteps)
+                }
+            }
+        })
+        return () => subscription.unsubscribe()
+    }, [form]);
+
      
       // 2. Define a submit handler.
-      function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+    async function onSubmit(values: z.infer<typeof ImageGenerationformSchema>) {
+        await generateImage(values)
       }
   return (
     <TooltipProvider>
@@ -235,7 +259,9 @@ const Configurations = () => {
 
 
             <FormControl>
-              <Slider defaultValue={[field.value]} min={1} max={50} step={1} onValueChange={value => field.onChange(value[0])} />
+              <Slider defaultValue={[field.value]} min={1} max={
+                    form.watch('model') === 'black-forest-labs/flux-schnell' ? 4 : 50
+              } step={1} onValueChange={value => field.onChange(value[0])} />
             </FormControl>
             <FormMessage />
             </FormItem>
@@ -320,22 +346,7 @@ const Configurations = () => {
             </FormItem>
         )}
         />
-        
-
-          {/* <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormDescription>This is your public display name.</FormDescription>
-              <FormMessage />
-            </FormItem>
-            /> */}
-              <Button type="submit">Submit</Button>
+        <Button type="submit" className='font-medium'>Generate</Button>
      
         </fieldset>
     </form>
