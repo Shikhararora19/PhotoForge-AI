@@ -1,4 +1,4 @@
 {
-  "/(dashboard)/image-generation/page": "app/(dashboard)/image-generation/page.js",
+  "/(dashboard)/gallery/page": "app/(dashboard)/gallery/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }

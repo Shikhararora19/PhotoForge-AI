@@ -51,6 +51,11 @@ const navItems =[
     icon: Layers
   },
   {
+    title:"My Images",
+    url: "/gallery",
+    icon: GalleryVerticalEnd
+  },
+  {
     title: "Billing",
     url: "/billing",
     icon: CreditCard

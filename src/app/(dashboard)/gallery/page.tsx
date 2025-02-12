@@ -1,8 +1,19 @@
+import { getImages } from '@/app/actions/image-actions'
+import GalleryComponent from '@/components/gallery/GalleryComponent'
 import React from 'react'
 
-const Gallery = () => {
+const Gallery = async () => {
+
+  const {data: images} = await getImages()
   return (
-    <div>Gallery Page</div>
+    <section className='container mx-auto'>
+      <h1 className='text-3xl font-semibold mb-2'>My Images</h1>
+      <p className='text-muted-foreground mb-6'> 
+        This is where you can view all the images you have generated. 
+        Click on the image to view deatils.
+      </p>
+      <GalleryComponent images={images || []}/>
+    </section>
   )
 }
 

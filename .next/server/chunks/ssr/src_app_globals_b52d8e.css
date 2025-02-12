@@ -636,6 +636,10 @@ body {
   margin-bottom: .5rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .ml-1 {
   margin-left: .25rem;
 }
@@ -785,6 +789,10 @@ body {
 
 .h-\[40\%\] {
   height: 40%;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
 }
 
 .h-\[var\(--radix-navigation-menu-viewport-height\)\] {
@@ -1556,6 +1564,11 @@ body {
   padding-bottom: 1rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -1627,6 +1640,11 @@ body {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-base {

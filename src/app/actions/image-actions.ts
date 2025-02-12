@@ -4,6 +4,12 @@ import { ImageGenerationformSchema } from "@/components/image-generation/configu
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import Replicate from "replicate";
+import { createClient } from "@/lib/supabase/server";
+import { Database } from "@datatypes.types"
+
+import { imageMeta } from "image-meta";
+import { randomUUID } from "crypto";
+import { error } from "console";
 
 const replicate = new Replicate({
     auth: process.env.REPLICATE_API_TOKEN,
@@ -20,7 +26,7 @@ export async function generateImageAction(input: (z.infer<typeof ImageGeneration
     const modelInput = {
         prompt: input.prompt,
         go_fast: true,
-        guidance: input.guidence,
+        guidance: input.guidance,
         megapixels: "1",
         num_outputs: input.num_outputs,
         aspect_ratio: input.aspect_ratio,
@@ -49,3 +55,138 @@ export async function generateImageAction(input: (z.infer<typeof ImageGeneration
         }
 
 }
+
+type storeImageInput = {
+    url: string} & Database["public"]["Tables"]["generated_images"]["Insert"]
+
+
+export async function imgUrlToBlob(url: string){
+    const response = await fetch(url)
+    const blob = await response.blob()
+    return (await blob).arrayBuffer();
+}
+
+
+export async function storeImages(data: storeImageInput[]){
+    const supabase = await createClient();
+
+    const {data: {user}}  = await supabase.auth.getUser();
+
+    if (!user){
+        return{
+            error: "User not found",
+            success: false,
+            data: null,
+        }
+    }
+
+    const uploadResults = [];
+
+        for(const img of data){
+            const arrayBuffer = await imgUrlToBlob(img.url);
+            const {width, height, type} = imageMeta(new Uint8Array(arrayBuffer));
+
+            const fileName =`img_${randomUUID()}.${type}`;
+            const filePath = `${user.id}/${fileName}`;
+
+            const {error: storageError} = await supabase.storage.from('generated_images').upload(filePath, arrayBuffer,
+                {
+                    contentType: `image/${type}`,
+                    cacheControl: '3600',
+                    upsert: false,
+                }
+            );
+
+            if(storageError){
+                uploadResults.push({
+                    fileName,
+                    error: storageError.message,
+                    success: false,
+                    data: null,
+
+                });
+            }
+
+            const {data: dbData, error: dbError} = await supabase.from('generated_images').insert([{
+                user_id: user.id,
+                model: img.model,
+                prompt: img.prompt,
+                guidance: img.guidance,
+                num_inference_steps: img.num_inference_steps,
+                aspect_ratio: img.aspect_ratio,
+                output_format: img.output_format,
+                image_name: fileName,
+                width,
+                height,
+            }]).select()
+
+            if(dbError){
+                uploadResults.push({
+                    fileName,
+                    error: dbError.message,
+                    success: false,
+                    data: dbData || null,
+                });
+                }              
+
+
+        }
+        console.log(uploadResults)
+        return{
+            error: null,
+            success: true,
+            data: {results:uploadResults}
+        }     
+
+}
+
+export async function getImages(limit?: number){
+    const supabase = await createClient();
+
+    const {data: {user}}  = await supabase.auth.getUser();
+
+    if (!user){
+        return{
+            error: "User not found",
+            success: false,
+            data: null,
+        }
+    }
+    let query = supabase.from('generated_images').select('*').eq('user_id', user.id).order('created_at', {ascending: false})
+
+    if(limit){
+        query = query.limit(limit)
+    }
+    
+    const {data, error} = await query;
+
+    if(error){
+        return{
+            error: error.message || "There was an error fetching images",
+            success: false,
+            data: null,
+        }
+    }
+
+    const imageWithUrls = await Promise.all(data.map(async (image: Database["public"]["Tables"]["generated_images"]["Row"]) => {
+        const { data } = await supabase.storage
+        .from('generated_images')
+        .createSignedUrl(`${user.id}/${image.image_name}`, 3600)
+
+        return{
+            ...image,
+            url: data?.signedUrl || null,
+        }
+    }))
+
+
+
+   
+        return{
+            error: null,
+            success: true,
+            data: imageWithUrls || null,
+        }     
+
+}
+

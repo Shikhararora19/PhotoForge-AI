@@ -2,8 +2,9 @@ import { error } from 'console'
 import { create } from 'zustand'
 import { ImageGenerationformSchema } from '@/components/image-generation/configurations'
 import { z } from 'zod'
-import { generateImageAction } from '@/app/actions/image-actions'
+import { generateImageAction, storeImages } from '@/app/actions/image-actions'
 import { url } from 'inspector/promises'
+import { toast } from 'sonner'
 
 
 interface GenerateState{
@@ -13,6 +14,7 @@ interface GenerateState{
     generateImage: (values: z.infer<typeof ImageGenerationformSchema>) => Promise<void>
 }
 
+
 const useGeneratedStore = create<GenerateState>((set) => ({
     loading: false,
     images: [],
@@ -20,6 +22,8 @@ const useGeneratedStore = create<GenerateState>((set) => ({
 
     generateImage: async (values: z.infer<typeof ImageGenerationformSchema>) => {
         set({loading: true, error: null})
+
+        const toastId = toast.loading("Generating Image...")
 
         try{
             const {error,success,data} = await generateImageAction(values)
@@ -29,16 +33,21 @@ const useGeneratedStore = create<GenerateState>((set) => ({
             }
 
             const dataWithUrl = data.map((url:string) => {
-                return {url}
+                return {url,
+                        ...values
+                }
             }
             )
             set({images: dataWithUrl, loading: false})
+            toast.success("Image generated successfully", {id: toastId})
+
+            await storeImages(dataWithUrl)
+            toast.success("Image stored successfully", {id: toastId})
         }
         catch(error){
             console.error(error)
             set({error: 'There was an error generating the image', loading: false})
         }
-
 
 
     }

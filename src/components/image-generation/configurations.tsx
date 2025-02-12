@@ -44,8 +44,8 @@ export const ImageGenerationformSchema = z.object({
     prompt: z.string({
         required_error: "Prompt is required",
     }),
-    guidence: z.number({
-        required_error: "Guidence scale is required",
+    guidance: z.number({
+        required_error: "Guidance scale is required",
     }),
     num_outputs: z.number({
         required_error: "Number of outputs is required",
@@ -72,7 +72,7 @@ const Configurations = () => {
         defaultValues: {
           model: "black-forest-labs/flux-dev",
             prompt: "",
-            guidence: 3.5,
+            guidance: 3.5,
             num_outputs: 1,
             aspect_ratio: "1:1",
             output_format: "jpg",
@@ -210,16 +210,16 @@ const Configurations = () => {
         </div>
         <FormField
         control={form.control}
-        name="guidence"
+        name="guidance"
         render={({ field }) => (
             <FormItem>
             <FormLabel className='flex items-center justify-between'>
                 <div className='flex items-center gap-2'>
-                Guidence
+                Guidance
                 <Tooltip>
                     <TooltipTrigger><Info className='w-4 h-4 '/></TooltipTrigger>
                     <TooltipContent>
-                    <p>Prompt guidence for the generated image.</p>
+                    <p>Prompt guidance for the generated image.</p>
                     </TooltipContent>
                 </Tooltip>
                 </div>
