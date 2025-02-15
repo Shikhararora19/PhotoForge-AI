@@ -190,3 +190,35 @@ export async function getImages(limit?: number){
 
 }
 
+export async function deleteImages(id: string, imageName: string){
+    const supabase = await createClient();
+
+    const {data: {user}}  = await supabase.auth.getUser();
+
+    if (!user){
+        return{
+            error: "User not found",
+            success: false,
+            data: null,
+        }
+    }
+
+    const {data, error} = await supabase.from('generated_images').delete().eq('id', id)
+
+    if(error){
+        return{
+            error: error.message || "There was an error deleting the image",
+            success: false,
+            data: null,
+        }
+    }
+    await supabase.storage.from('generated_images').remove([`${user.id}/${imageName}`])
+
+    return{
+        error: null,
+        success: true,
+        data: data || null,
+    }
+      
+}
+
