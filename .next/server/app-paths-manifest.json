@@ -2,5 +2,6 @@
   "/(dashboard)/gallery/page": "app/(dashboard)/gallery/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
-  "/(dashboard)/image-generation/page": "app/(dashboard)/image-generation/page.js"
+  "/(dashboard)/image-generation/page": "app/(dashboard)/image-generation/page.js",
+  "/(dashboard)/model-training/page": "app/(dashboard)/model-training/page.js"
 }
