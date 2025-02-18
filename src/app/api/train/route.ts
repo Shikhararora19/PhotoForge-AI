@@ -6,7 +6,7 @@ import Replicate from "replicate";
 const replicate = new Replicate({
     auth: process.env.REPLICATE_API_TOKEN})
 
-const WEBHOOK_URL = process.env.SITE_URL ?? "https://ab7a-2604-3d09-6479-2a10-bd98-ebc5-6f09-3ace.ngrok-free.app"
+const WEBHOOK_URL = process.env.SITE_URL ?? "https://382f-2604-3d09-6479-2a10-3888-cd6d-1b7f-695c.ngrok-free.app"
 
 
 export async function POST(request: NextRequest){
@@ -62,7 +62,7 @@ export async function POST(request: NextRequest){
                 input_images: fileUrl.signedUrl,
                 trigger_word: "ohwx",
                 },
-                webhook: `${WEBHOOK_URL}/api/webhooks/training`,
+                webhook: `${WEBHOOK_URL}/api/webhooks/training?userId=${user.id}&modelName=${encodeURIComponent(input.modelName)}&fileName=${encodeURIComponent(fileName)}`,
                 webhook_events_filter: ["completed"]
             }
           );

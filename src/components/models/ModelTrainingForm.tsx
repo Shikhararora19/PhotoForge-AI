@@ -86,6 +86,8 @@ const ModelTrainingForm = () => {
             formData.append('fileKey', res.Key);
             formData.append('modelName', values.modelName);
             formData.append('gender', values.gender);
+            
+            toast.loading("Starting model training...", {id: toastId});
 
             const response = await fetch('/api/train', {
                 method: 'POST',
@@ -98,7 +100,7 @@ const ModelTrainingForm = () => {
                 throw new Error(results.error || "Failed to train model");
             }
 
-            toast.success("Model training started successfully!", {id: toastId});
+            toast.loading("Model training started successfully!", {id: toastId});
 
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : "Failed to upload file";

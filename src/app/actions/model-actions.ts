@@ -81,7 +81,7 @@ export async function deleteModel(id: number, model_id: string, model_version: s
     const {error} = await supabase.from('models').delete().eq('id', id);
 
     return{
-        error: error?.message || "failed to delete model from database",
+        error: error?.message,
         success: !error,
     }
 

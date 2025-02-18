@@ -1,9 +1,7 @@
 {
-  "/api/webhooks/training/route": "app/api/webhooks/training/route.js",
-  "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/login/page": "app/login/page.js",
   "/(dashboard)/model-training/page": "app/(dashboard)/model-training/page.js",
   "/api/train/route": "app/api/train/route.js",
-  "/(dashboard)/models/page": "app/(dashboard)/models/page.js"
+  "/api/webhooks/training/route": "app/api/webhooks/training/route.js",
+  "/(dashboard)/models/page": "app/(dashboard)/models/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }
