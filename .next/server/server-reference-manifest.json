@@ -9,11 +9,16 @@
         "app/(dashboard)/models/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/models/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
         "app/(dashboard)/model-training/page": "action-browser",
-        "app/(dashboard)/models/page": "action-browser"
+        "app/(dashboard)/models/page": "action-browser",
+        "app/(dashboard)/image-generation/page": "action-browser"
       }
     },
     "00a175ffb1b64daf0b77b154dcd00830ee3ad3ba21": {
@@ -25,11 +30,16 @@
         "app/(dashboard)/models/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/models/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
         "app/(dashboard)/model-training/page": "action-browser",
-        "app/(dashboard)/models/page": "rsc"
+        "app/(dashboard)/models/page": "rsc",
+        "app/(dashboard)/image-generation/page": "rsc"
       }
     },
     "40971d3f923f5aff75e86b933c961e459a6b3f91a4": {
@@ -41,11 +51,16 @@
         "app/(dashboard)/models/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/models/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
         "app/(dashboard)/model-training/page": "action-browser",
-        "app/(dashboard)/models/page": "action-browser"
+        "app/(dashboard)/models/page": "action-browser",
+        "app/(dashboard)/image-generation/page": "action-browser"
       }
     },
     "4099940837d8afe54c97e3282376b405920b502440": {
@@ -57,11 +72,16 @@
         "app/(dashboard)/models/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/models/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
         "app/(dashboard)/model-training/page": "action-browser",
-        "app/(dashboard)/models/page": "rsc"
+        "app/(dashboard)/models/page": "rsc",
+        "app/(dashboard)/image-generation/page": "rsc"
       }
     },
     "402560a32814bfc5fa485a5e41c39c37d19ce97d6b": {
@@ -73,11 +93,16 @@
         "app/(dashboard)/models/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/models/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
         "app/(dashboard)/model-training/page": "action-browser",
-        "app/(dashboard)/models/page": "action-browser"
+        "app/(dashboard)/models/page": "action-browser",
+        "app/(dashboard)/image-generation/page": "action-browser"
       }
     },
     "7006a832b6de8ed07d7b2ed4343392f78f6763aa1e": {
@@ -89,11 +114,71 @@
         "app/(dashboard)/models/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/models/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
         "app/(dashboard)/model-training/page": "action-browser",
-        "app/(dashboard)/models/page": "rsc"
+        "app/(dashboard)/models/page": "rsc",
+        "app/(dashboard)/image-generation/page": "rsc"
+      }
+    },
+    "4055d87ebc863d41387a00ab98b54419f831ccc543": {
+      "workers": {
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/image-generation/page": "action-browser"
+      }
+    },
+    "40c164c417ea7be5e89f94a45c62e08f765b345084": {
+      "workers": {
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/image-generation/page": "action-browser"
+      }
+    },
+    "4067f861e8e8101e053b71e1db551aba2f621f7007": {
+      "workers": {
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/image-generation/page": "action-browser"
+      }
+    },
+    "40eb755dfabdbebe48c12cfb6b561ac21f8e90a694": {
+      "workers": {
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/image-generation/page": "action-browser"
+      }
+    },
+    "60a74a83e3edce6187d13d92c4793718b559e67cb1": {
+      "workers": {
+        "app/(dashboard)/image-generation/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/image-generation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/model-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/image-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/image-generation/page": "action-browser"
       }
     }
   },

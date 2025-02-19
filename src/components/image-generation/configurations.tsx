@@ -35,6 +35,13 @@ import { Textarea } from '../ui/textarea'
 import { Info } from 'lucide-react'
 import { generateImageAction } from '@/app/actions/image-actions'
 import useGeneratedStore from '@/store/useGeneratedStore'
+import { Tables } from '@datatypes.types'
+
+
+interface ConfigurationsProps {
+    userModels: Tables<"models">[],
+    model_id?: string
+}
 
 
 export const ImageGenerationformSchema = z.object({
@@ -64,13 +71,13 @@ export const ImageGenerationformSchema = z.object({
     }).min(1, { message: "Number of inference steps must be at least 1" }).max(50, { message: "Number of inference steps must be at most 50" }),
 })
 
-const Configurations = () => {
+const Configurations = ({userModels, model_id}: ConfigurationsProps) => {
     const generateImage = useGeneratedStore((state) => state.generateImage)
 
     const form = useForm<z.infer<typeof ImageGenerationformSchema>>({
         resolver: zodResolver(ImageGenerationformSchema),
         defaultValues: {
-          model: "black-forest-labs/flux-dev",
+          model: model_id? `shikhararora19/${model_id}` : "black-forest-labs/flux-dev",
             prompt: "",
             guidance: 3.5,
             num_outputs: 1,
@@ -104,7 +111,17 @@ const Configurations = () => {
      
       // 2. Define a submit handler.
     async function onSubmit(values: z.infer<typeof ImageGenerationformSchema>) {
-        await generateImage(values)
+        const newValues = {
+          ...values,
+          prompt: values.model.startsWith("shikhararoa19") ? (() =>
+          {
+            const modelId = values.model.replace("shikhararora19/", "").split(":")[0];
+            const selectedModel = userModels.find((model) => model.model_id === modelId);
+            return `photo of a ${selectedModel?.trigger_word || 'ohwx'} ${selectedModel?.gender}, ${values.prompt}`
+          })()
+            : values.prompt,
+        }
+        await generateImage(newValues)
       }
   return (
     <TooltipProvider>
@@ -137,6 +154,9 @@ const Configurations = () => {
               <SelectContent>
                 <SelectItem value="black-forest-labs/flux-dev">Flux Dev</SelectItem>
                 <SelectItem value="black-forest-labs/flux-schnell">Flux Schnell</SelectItem>
+                {
+                    userModels.map((model) => model.training_status === 'succeeded' ? <SelectItem key={model.id} value={`shikhararora19/${model.model_id}:${model.version}`}>{model.model_name}</SelectItem> : null)
+                }
               </SelectContent>
             </Select>
             <FormMessage />

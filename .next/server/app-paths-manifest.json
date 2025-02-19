@@ -3,5 +3,6 @@
   "/api/train/route": "app/api/train/route.js",
   "/api/webhooks/training/route": "app/api/webhooks/training/route.js",
   "/(dashboard)/models/page": "app/(dashboard)/models/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(dashboard)/image-generation/page": "app/(dashboard)/image-generation/page.js"
 }

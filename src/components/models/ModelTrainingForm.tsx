@@ -100,7 +100,7 @@ const ModelTrainingForm = () => {
                 throw new Error(results.error || "Failed to train model");
             }
 
-            toast.loading("Model training started successfully!", {id: toastId});
+            toast.success("Model training started successfully!", {id: toastId});
 
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : "Failed to upload file";

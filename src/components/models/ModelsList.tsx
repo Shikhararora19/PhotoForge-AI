@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
 import Link from 'next/link'
 import { Button } from '../ui/button'
 import { formatDistance } from 'date-fns'
-import { CheckCircle2, Clock, Loader2, Trash, Trash2, User2, XCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Clock, Loader2, Trash, Trash2, User2, XCircle } from 'lucide-react'
 import {
     AlertDialog,
     AlertDialogAction,
@@ -19,6 +19,7 @@ import {
   } from "@/components/ui/alert-dialog"
 import { toast } from 'sonner'
 import { deleteModel } from '@/app/actions/model-actions'
+import { cn } from '@/lib/utils'
 
 
 type ModelType = {
@@ -146,6 +147,18 @@ const ModelsList = ({models}:ModelsListProps) => {
                         </div>
                     </div>
                 </CardContent>
+                <div className=' pt-4'>
+                    <Link href={
+                        model.training_status === 'succeeded' ? `/image-generation?model_id=${model.model_id}:${model.version}` : '#'
+                    }
+                    className={cn('inline-flex w-full group', model.training_status!=='succeeded' && 'pointer-events-none opacity-50')}>
+                    <Button className='w-full group-hover::bg-primary/90'
+                    disabled={model.training_status!=='succeeded'}>
+                        Generate Images
+                        <ArrowRight className='ml-2 w-4 h-4'/>
+                    </Button>
+                    </Link>
+                </div>
                 </CardHeader>
             </Card>
 

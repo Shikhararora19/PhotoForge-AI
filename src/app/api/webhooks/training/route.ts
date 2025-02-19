@@ -14,6 +14,7 @@ const replicate = new Replicate({
 export async function POST(req: Request) {
     try{
     const body = await req.json();
+    console.log(body);
     const url = new URL(req.url);
     const userId = url.searchParams.get("userId")?? "";
     const modelName = url.searchParams.get("modelName")?? "";  
@@ -62,7 +63,7 @@ export async function POST(req: Request) {
           });
 
         await supabaseAdmin.from('models').update({training_status: body.status, 
-            training_time: body.metrics?.total_time ?? null,
+            training_time: body.metrics.predict_time,
             version: body.output.version.split(":")[1] ?? null,
           }).eq('user_id', userId).eq('user_id', userId).eq('model_name', modelName);
 
