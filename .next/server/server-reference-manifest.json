@@ -19,7 +19,7 @@
           "async": false
         },
         "app/(dashboard)/billing/page": {
-          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/stripe/server.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
         },
         "app/(dashboard)/dashboard/page": {
@@ -81,7 +81,7 @@
           "async": false
         },
         "app/(dashboard)/billing/page": {
-          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/stripe/server.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
         },
         "app/(dashboard)/dashboard/page": {
@@ -143,7 +143,7 @@
           "async": false
         },
         "app/(dashboard)/billing/page": {
-          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/stripe/server.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
         },
         "app/(dashboard)/dashboard/page": {
@@ -264,6 +264,28 @@
       "layer": {
         "app/(dashboard)/image-generation/page": "action-browser",
         "app/(dashboard)/gallery/page": "rsc"
+      }
+    },
+    "401fa2a22ca6cc8b97cf1ec5e822d9382a3d99b6f8": {
+      "workers": {
+        "app/(dashboard)/billing/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/stripe/server.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/billing/page": "action-browser"
+      }
+    },
+    "60e4444d91eff5a0ef18a5abb2dc7b9e19876ecbb7": {
+      "workers": {
+        "app/(dashboard)/billing/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/stripe/server.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/billing/page": "action-browser"
       }
     }
   },

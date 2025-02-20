@@ -685,6 +685,10 @@ body {
   grid-column: 1 / -1;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
 .-mx-1 {
   margin-left: -.25rem;
   margin-right: -.25rem;
@@ -1117,6 +1121,10 @@ body {
   width: 1px;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .min-w-0 {
   min-width: 0;
 }
@@ -1179,6 +1187,14 @@ body {
 
 .max-w-3xl {
   max-width: 48rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.max-w-\[70-vw\] {
+  max-width: 70-vw;
 }
 
 .flex-1 {
@@ -1895,6 +1911,16 @@ body {
   padding-bottom: .75rem;
 }
 
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .pb-3 {
   padding-bottom: .75rem;
 }
@@ -1953,6 +1979,10 @@ body {
 
 .pr-12 {
   padding-right: 3rem;
+}
+
+.pb-0 {
+  padding-bottom: 0;
 }
 
 .text-left {
@@ -3287,6 +3317,10 @@ body {
     max-width: 36rem;
   }
 
+  .sm\:max-w-\[90vw\] {
+    max-width: 90vw;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -3377,6 +3411,20 @@ body {
     --tw-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+
+@media (width >= 1024px) {
+  .lg\:max-w-\[70-vw\] {
+    max-width: 70-vw;
+  }
+
+  .lg\:max-w-\[70vw\] {
+    max-width: 70vw;
+  }
+
+  .lg\:max-w-\[90vw\] {
+    max-width: 90vw;
   }
 }
 
