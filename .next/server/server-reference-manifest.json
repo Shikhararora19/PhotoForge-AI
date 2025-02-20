@@ -21,6 +21,14 @@
         "app/(dashboard)/billing/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/dashboard/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/login/page": {
+          "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -28,7 +36,9 @@
         "app/(dashboard)/models/page": "action-browser",
         "app/(dashboard)/image-generation/page": "action-browser",
         "app/(dashboard)/gallery/page": "action-browser",
-        "app/(dashboard)/billing/page": "action-browser"
+        "app/(dashboard)/billing/page": "action-browser",
+        "app/(dashboard)/dashboard/page": "action-browser",
+        "app/login/page": "action-browser"
       }
     },
     "00a175ffb1b64daf0b77b154dcd00830ee3ad3ba21": {
@@ -73,6 +83,14 @@
         "app/(dashboard)/billing/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/dashboard/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/login/page": {
+          "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -80,7 +98,9 @@
         "app/(dashboard)/models/page": "action-browser",
         "app/(dashboard)/image-generation/page": "action-browser",
         "app/(dashboard)/gallery/page": "action-browser",
-        "app/(dashboard)/billing/page": "action-browser"
+        "app/(dashboard)/billing/page": "action-browser",
+        "app/(dashboard)/dashboard/page": "action-browser",
+        "app/login/page": "action-browser"
       }
     },
     "4099940837d8afe54c97e3282376b405920b502440": {
@@ -125,6 +145,14 @@
         "app/(dashboard)/billing/page": {
           "moduleId": "[project]/.next-internal/server/app/(dashboard)/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
           "async": false
+        },
+        "app/(dashboard)/dashboard/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        },
+        "app/login/page": {
+          "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
         }
       },
       "layer": {
@@ -132,7 +160,9 @@
         "app/(dashboard)/models/page": "action-browser",
         "app/(dashboard)/image-generation/page": "action-browser",
         "app/(dashboard)/gallery/page": "action-browser",
-        "app/(dashboard)/billing/page": "action-browser"
+        "app/(dashboard)/billing/page": "action-browser",
+        "app/(dashboard)/dashboard/page": "action-browser",
+        "app/login/page": "action-browser"
       }
     },
     "7006a832b6de8ed07d7b2ed4343392f78f6763aa1e": {

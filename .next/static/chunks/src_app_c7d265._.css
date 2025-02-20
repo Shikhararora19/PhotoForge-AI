@@ -805,6 +805,10 @@ body {
   margin-top: auto;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -1311,6 +1315,10 @@ body {
   flex-wrap: wrap;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -1357,6 +1365,10 @@ body {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -1563,6 +1575,10 @@ body {
 
 .border-transparent {
   border-color: #0000;
+}
+
+.border-border {
+  border-color: hsl(var(--border));
 }
 
 .border-l-transparent {
@@ -1936,6 +1952,10 @@ body {
   font-weight: 600;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -1959,6 +1979,10 @@ body {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
 }
 
 .tracking-tight {

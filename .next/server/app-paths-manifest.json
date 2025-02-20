@@ -8,5 +8,7 @@
   "/(dashboard)/gallery/page": "app/(dashboard)/gallery/page.js",
   "/(dashboard)/billing/page": "app/(dashboard)/billing/page.js",
   "/page": "app/page.js",
-  "/api/webhooks/stripe/route": "app/api/webhooks/stripe/route.js"
+  "/api/webhooks/stripe/route": "app/api/webhooks/stripe/route.js",
+  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
+  "/login/page": "app/login/page.js"
 }
