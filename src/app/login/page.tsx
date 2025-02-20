@@ -4,7 +4,13 @@ import Image from 'next/image'
 import Logo from '@/components/ui/Logo'
 import AuthForm from '@/components/authentication/AuthForm'
 
-const AuthenticationPage = () => {
+interface SearchParams{
+  state?: string
+}
+
+const AuthenticationPage = async ({searchParams}: {searchParams: Promise<SearchParams>}) => {
+
+  const {state} = await searchParams;
   return (
     <main className='h-screen grid grid-cols-2 relative'>
         <div className='relative w-full flex flex-col bg-muted p-10 text-primary-foreground'>
@@ -27,7 +33,7 @@ const AuthenticationPage = () => {
         <div className='relative flex flex-col items-center justify-center p-8 h-full w-full'>
 
            <div className='w-[350px] max-w-xl mx-auto'>
-           <AuthForm />
+           <AuthForm state={state ?? 'login'}/>
            </div>
         </div>
 

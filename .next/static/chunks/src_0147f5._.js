@@ -1096,9 +1096,9 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
-const AuthForm = ()=>{
+const AuthForm = ({ state })=>{
     _s();
-    const [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('login');
+    const [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(state);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "space-y-6",
         children: [
@@ -1250,7 +1250,7 @@ const AuthForm = ()=>{
         columnNumber: 5
     }, this);
 };
-_s(AuthForm, "dRu6JN1xq9XVSc/+DzMuWYbDX34=");
+_s(AuthForm, "KafEjKfZkmCwOmqRtqBneGKzrqc=");
 _c = AuthForm;
 const __TURBOPACK__default__export__ = AuthForm;
 var _c;
