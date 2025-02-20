@@ -677,6 +677,14 @@ body {
   grid-column: span 2 / span 2;
 }
 
+.col-span-5 {
+  grid-column: span 5 / span 5;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
 .-mx-1 {
   margin-left: -.25rem;
   margin-right: -.25rem;
@@ -1309,6 +1317,10 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -1379,6 +1391,14 @@ body {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-x-2 {
+  column-gap: .5rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -1691,6 +1711,10 @@ body {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.bg-primary\/10 {
+  background-color: hsl(var(--primary) / .1);
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1861,6 +1885,16 @@ body {
   padding-right: 1.5rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-3 {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+
 .pb-3 {
   padding-bottom: .75rem;
 }
@@ -1915,6 +1949,10 @@ body {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pr-12 {
+  padding-right: 3rem;
 }
 
 .text-left {
