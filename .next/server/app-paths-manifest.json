@@ -1,16 +1,5 @@
 {
-  "/(dashboard)/model-training/page": "app/(dashboard)/model-training/page.js",
-  "/api/train/route": "app/api/train/route.js",
-  "/api/webhooks/training/route": "app/api/webhooks/training/route.js",
-  "/(dashboard)/models/page": "app/(dashboard)/models/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(dashboard)/image-generation/page": "app/(dashboard)/image-generation/page.js",
-  "/(dashboard)/gallery/page": "app/(dashboard)/gallery/page.js",
-  "/(dashboard)/billing/page": "app/(dashboard)/billing/page.js",
   "/page": "app/page.js",
-  "/api/webhooks/stripe/route": "app/api/webhooks/stripe/route.js",
-  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
-  "/login/page": "app/login/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/(dashboard)/account-settings/page": "app/(dashboard)/account-settings/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/login/page": "app/login/page.js"
 }

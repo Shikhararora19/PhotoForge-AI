@@ -7,7 +7,9 @@ import React from 'react'
 
 const AccountSettings = async () => {
   const supabase = await createClient();
-  const user = await getUser(supabase);
+  const {data} = await supabase.auth.getUser();
+  const user = data.user;
+  
 
   if(!user){
     return redirect('/login')

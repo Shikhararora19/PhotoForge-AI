@@ -53,7 +53,7 @@ async function updateSession(request) {
     // issues with users being randomly logged out.
     // IMPORTANT: DO NOT REMOVE auth.getUser()
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user && !request.nextUrl.pathname.startsWith('/login') && !request.nextUrl.pathname.startsWith('/auth') && !request.nextUrl.pathname.startsWith('/api/webhooks/training') && !request.nextUrl.pathname.startsWith('/api/webhooks/stripe')) {
+    if (!user && !request.nextUrl.pathname.startsWith('/login') && !request.nextUrl.pathname.startsWith('/auth') && !request.nextUrl.pathname.startsWith('/api/webhooks/training') && !request.nextUrl.pathname.startsWith('/api/webhooks/stripe') && !(request.nextUrl.pathname === "/")) {
         // no user, potentially respond by redirecting the user to the login page
         const url = request.nextUrl.clone();
         url.pathname = '/login';

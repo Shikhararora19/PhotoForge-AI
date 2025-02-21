@@ -93,3 +93,17 @@ export async function resetPassword(values: {email:string}): Promise<AuthRespons
         data: resetPasswordData||null,
     }
 }
+
+
+export async function changePassword(newPassword:string): Promise<AuthResponse>{
+    const supabase = await createClient();
+    const { data, error } = await supabase.auth.updateUser({
+        password: newPassword,
+    });
+
+    return{
+        error: error?.message || "there was an error changing password",
+        success: !error,
+        data: data||null,
+    }
+}

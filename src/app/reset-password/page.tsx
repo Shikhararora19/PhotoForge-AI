@@ -2,7 +2,7 @@ import React from 'react'
 import AuthIMg from '@/public/Abstract Curves and Colors.jpeg'
 import Image from 'next/image'
 import Logo from '@/components/ui/Logo'
-import AuthForm from '@/components/authentication/AuthForm'
+import ChangePasswordForm from '@/components/account/ChangePasswordForm'
 
 
 
@@ -30,7 +30,7 @@ const ResetPasswordPage = async () => {
         <div className='relative flex flex-col items-center justify-center p-8 h-full w-full'>
 
            <div className='w-[350px] max-w-xl mx-auto'>
-            ChangePasswordForm
+            <ChangePasswordForm/>
            </div>
         </div>
 
@@ -38,4 +38,4 @@ const ResetPasswordPage = async () => {
   )
 }
 
-export default AuthenticationPage
+export default ResetPasswordPage
