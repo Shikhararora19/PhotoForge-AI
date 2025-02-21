@@ -119,7 +119,10 @@ export default {
   			gradient: 'gradient 8s linear infinite',
   			marquee: 'marquee var(--duration) infinite linear',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
-  		}
+  		},
+		screens:{
+			xs: '450px',
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],

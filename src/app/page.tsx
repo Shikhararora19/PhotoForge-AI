@@ -1,3 +1,4 @@
+import Features from "@/components/landing-page/Features";
 import HeroSection from "@/components/landing-page/HeroSection";
 import Navigation from "@/components/landing-page/Navigation";
 import Pricing from "@/components/landing-page/Pricing";
@@ -22,6 +23,7 @@ export default async function Home() {
     <main className="flex flex-col min-h-screnn items-center justify-center">
       <Navigation/>
       <HeroSection/>
+      <Features/>
       <Pricing products={products ?? []}/>
     </main>
   );
