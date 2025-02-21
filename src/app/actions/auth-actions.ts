@@ -80,3 +80,16 @@ export async function updateProfile(values: {fullName:string}): Promise<AuthResp
         data: profileData||null,
     }
 }
+
+export async function resetPassword(values: {email:string}): Promise<AuthResponse>{
+    const supabase = await createClient();
+
+
+    const { data: resetPasswordData, error } = await supabase.auth.resetPasswordForEmail(values.email);
+
+    return{
+        error: error?.message || "there was an error sending reset password email",
+        success: !error,
+        data: resetPasswordData||null,
+    }
+}

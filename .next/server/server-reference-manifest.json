@@ -319,6 +319,17 @@
         "app/(dashboard)/billing/page": "action-browser"
       }
     },
+    "406e74b5effee770cf96b8b01c80faa50be0b00553": {
+      "workers": {
+        "app/(dashboard)/account-settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/account-settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth-actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(dashboard)/account-settings/page": "action-browser"
+      }
+    },
     "406793516af06d6842551d5ccb5c3ea8dc0187dd9c": {
       "workers": {
         "app/(dashboard)/account-settings/page": {
