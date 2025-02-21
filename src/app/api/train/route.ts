@@ -8,6 +8,26 @@ const replicate = new Replicate({
 
 const WEBHOOK_URL = process.env.SITE_URL ?? "https://382f-2604-3d09-6479-2a10-3888-cd6d-1b7f-695c.ngrok-free.app"
 
+async function validateUserCredits(userId: string){
+    const supabase = await createClient();
+    const {data: creditsData, error} = await supabaseAdmin.from('credits').select('*').eq('user_id', userId).single();
+
+    if(error){
+        throw new Error(error.message || "There was an error fetching credits")
+    }
+
+    if(!creditsData){
+        throw new Error("No credits found for user")
+    }
+
+    const credits = creditsData?.model_training_count ?? 0
+
+    if(credits <= 0){
+        throw new Error("Insufficient credits")
+    }
+
+    return credits
+}
 
 export async function POST(request: NextRequest){
     try{
@@ -30,6 +50,8 @@ export async function POST(request: NextRequest){
         if(!input.fileKey || !input.modelName){
             return NextResponse.json({error: "Missing required fields"}, {status: 400})  
         }
+
+        const oldCredits = await validateUserCredits(user?.id)
 
         const fileName = input.fileKey.replace("training_data/", "");
         const {data: fileUrl} = await supabaseAdmin.storage.from('training_data').createSignedUrl(fileName, 3600)
@@ -77,6 +99,10 @@ export async function POST(request: NextRequest){
             training_steps: 650,
             training_id: training.id,
         });
+
+        await supabaseAdmin.from("credits").update({
+            model_training_count: oldCredits - 1
+        }).eq("user_id", user?.id)
 
 
         //console.log("training", training)

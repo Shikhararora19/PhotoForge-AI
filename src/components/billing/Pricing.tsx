@@ -13,9 +13,10 @@ import { Check } from 'lucide-react'
 import PricingSheet from './PricingSheet'
 import { User } from '@supabase/supabase-js'
 import { redirect, usePathname, useRouter } from 'next/navigation'
-import { checkoutWithStripe } from '@/lib/stripe/server'
+import { checkoutWithStripe, createStripePortal } from '@/lib/stripe/server'
 import { getErrorRedirect } from '@/lib/helpers'
 import { getStripe } from '@/lib/stripe/client'
+import { toast } from 'sonner'
 
 type Product = Tables<'products'>
 type Prices = Tables<'prices'>
@@ -46,11 +47,28 @@ interface PricingProps {
 const renderPricingButton = ({
     subscription, user, product, price, mostPopularProduct, handleStripeCheckout, handleStripePortalRequest
 }:{
-    subscription: SubscriptionWithProducts | null; user: User | null; product: ProductWithPrices; price: Prices, mostPopularProduct: string, handleStripeCheckout: () => Promise<void>, handleStripePortalRequest: () => Promise<void>
+    subscription: SubscriptionWithProducts | null; user: User | null; product: ProductWithPrices; price: Prices, mostPopularProduct: string, handleStripeCheckout: (price: Prices) => Promise<void>, handleStripePortalRequest: () => Promise<void>
 }) => {
     //case1 user has an active subscription
-    //if(user && subscription && subscription.prices?.products?.name?.toLowerCase())
+    if(user && subscription && subscription.prices?.products?.name?.toLowerCase() === product.name?.toLowerCase()){
+        return(
+        <Button className='mt-8 w-full font-semibold' onClick={handleStripePortalRequest}>
+            Manage Subscription
+        </Button>
+        )
+    
+    }
 
+    //case2 user is logged in and has an active subscription for a different product
+    if(user && subscription && subscription.prices?.products?.name?.toLowerCase() !== product.name?.toLowerCase()){
+        return(
+        <Button className='mt-8 w-full font-semibold' variant={'secondary'} onClick={handleStripePortalRequest}>
+            Switch Plan
+        </Button>
+        )
+    }
+
+    //case3 user is logged in and has no active subscription
     if(user && !subscription){
         return (<Button className='mt-8 w-full font-semibold' variant={product.name?.toLowerCase() === mostPopularProduct.toLowerCase() ? 'default' : 'secondary'} onClick={() => handleStripeCheckout(price)}>
             Subscribe
@@ -58,7 +76,9 @@ const renderPricingButton = ({
         )
     }
 
-    return null;
+    return <Button className='mt-8 w-full font-semibold' variant={product.name?.toLowerCase() === mostPopularProduct.toLowerCase() ? 'default' : 'secondary'} onClick={() => handleStripeCheckout(price)}>
+    Subscribe
+</Button>;
 }
 
 const Pricing = ({
@@ -102,7 +122,9 @@ const Pricing = ({
         stripe?.redirectToCheckout({sessionId})
     }
     const handleStripePortalRequest = async () => {
-        return "Stripe portal"
+        toast.info('Redirecting to stripe manage subscription')
+        const redirectUrl = await createStripePortal(currentPath)
+        return router.push(redirectUrl)
     }
   return (  
     <section className={cn('max-w-7xl mx-auto py-16 px-9 w-full flex flex-col', className)}>

@@ -77,6 +77,15 @@ export async function POST(req: Request) {
 
         await supabaseAdmin.from('models').update({training_status: body.status}).eq('user_id', userId).eq('model_name', modelName);
 
+        //increment credits
+        const {data: oldCredits, error} = await supabaseAdmin.from('credits').select('model_training_count').eq('user_id', userId).single();
+
+        if(error){
+            throw new Error(error.message || "There was an error fetching credits")
+        }
+
+        await supabaseAdmin.from('credits').update({model_training_count: oldCredits.model_training_count + 1}).eq('user_id', userId);
+
     }
     await supabaseAdmin.storage.from('training_data').remove([`${fileName}`]);
 

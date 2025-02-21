@@ -41,12 +41,12 @@ export async function login(formData: FormData): Promise<AuthResponse>{
         password: formData.get('password') as string,
     }
 
-    const { data: signinData, error } = await supabase.auth.signInWithPassword(data);
+    const { data: profileData, error } = await supabase.auth.signInWithPassword(data);
 
     return{
         error: error?.message || "there was an error logging up",
         success: !error,
-        data: signinData||null,
+        data: profileData||null,
     }
 }
 
@@ -60,5 +60,23 @@ export async function logout(): Promise<AuthResponse>{
         error: error?.message || "there was an error logging out",
         success: !error,
         data: null,
+    }
+}
+
+export async function updateProfile(values: {fullName:string}): Promise<AuthResponse>{
+    const supabase = await createClient();
+    const full_name = values.fullName;
+
+
+    const { data: profileData, error } = await supabase.auth.updateUser({
+        data: {
+            full_name: values.fullName,
+        }
+    });
+
+    return{
+        error: error?.message || "there was an error updating profile",
+        success: !error,
+        data: profileData||null,
     }
 }

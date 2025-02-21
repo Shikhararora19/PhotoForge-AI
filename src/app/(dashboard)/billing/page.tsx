@@ -31,7 +31,7 @@ const BillingPage = async () => {
       <PlanSummary subscription={subscription} user={user} products={products || []} credits={credits}/>
 
       {
-        subscription.status === 'active' && <Pricing 
+        subscription?.status === 'active' && <Pricing 
         user={user}
         products={products || []}
         subscription={subscription}
