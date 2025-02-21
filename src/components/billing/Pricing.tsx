@@ -35,9 +35,12 @@ interface SubscriptionWithProducts extends Subscription {
 
 interface PricingProps {
     subscription: SubscriptionWithProducts,
-    mostPopularProduct: string,
+    mostPopularProduct?: string,
     products: ProductWithPrices[],
-    user: User | null
+    user: User | null,
+    showInterval?: boolean,
+    className?: string,
+    activeProduct?: string
 }
 
 const renderPricingButton = ({
@@ -63,6 +66,9 @@ const Pricing = ({
     products,
     mostPopularProduct = 'pro plan',
     subscription,
+    showInterval = true,
+    className,
+    activeProduct = ""
 }: PricingProps) => {
 
     const [billingInterval, setBillingInterval] = useState('month')
@@ -99,7 +105,9 @@ const Pricing = ({
         return "Stripe portal"
     }
   return (  
-    <section className='max-w-7xl mx-auto py-16 px-9 w-full flex flex-col'>
+    <section className={cn('max-w-7xl mx-auto py-16 px-9 w-full flex flex-col', className)}>
+        {showInterval 
+        &&
         <div className='flex justify-center items-center space-x-4 py-8'>
             <Label htmlFor='pricing-switch' className='font-semibold text-base'>
                 Monthly
@@ -111,22 +119,24 @@ const Pricing = ({
                 Yearly
             </Label>
         </div>
+        }
+        
 
-        <div className='grid grid-cols-3 place-items-center mx-auto gap-8 space-y-4'>
+        <div className='grid grid-cols-3 place-items-center mx-auto gap-8 space-y-0'>
             {
                 products.map(product => {
                     const price = product?.prices?.find(price => price.interval === billingInterval)
                     if(!price) return null;
                     const priceString = new Intl.NumberFormat('en-US', {style: 'currency', currency: price.currency!, minimumFractionDigits:0}).format((price?.unit_amount || 0) / 100)
                     return <div key={product.id} className={cn('border bg-background rounded-xl shadow-sm h-fit divide-border border-border divide-y',
-                    product.name?.toLowerCase() === mostPopularProduct.toLowerCase() ? 'border-primary bg-background drop-shadow-md scale-105' : 'border-border'
+                    product.name?.toLowerCase() === activeProduct.toLowerCase() ? 'border-primary bg-background drop-shadow-md scale-105' : 'border-border'
                 )}>
                         <div className='p-6'>
                             <h2 className='text-2xl font-semibold leading-6 text-foreground flex items-center justify-between'>
                                 {product.name}
                                 {
-                                    product.name?.toLowerCase() === mostPopularProduct.toLowerCase() ? <Badge className='border-border font-semibold'> 
-                                        Most Popular
+                                    product.name?.toLowerCase() === activeProduct.toLowerCase() ? <Badge className='border-border font-semibold'> 
+                                        Selected
                                     </Badge> : null
                                 }
                             </h2>

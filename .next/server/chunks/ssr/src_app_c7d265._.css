@@ -1831,6 +1831,10 @@ body {
   padding: 1px;
 }
 
+.\!p-0 {
+  padding: 0 !important;
+}
+
 .px-1 {
   padding-left: .25rem;
   padding-right: .25rem;
