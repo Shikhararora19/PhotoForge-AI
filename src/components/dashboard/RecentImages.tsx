@@ -37,7 +37,7 @@ const RecentImages = ({images}: RecentImagesProps) => {
         </Card>
     }
   return (
-    <Card className='col-span-3'>
+    <Card className='col-span-full xL:col-span-3'>
             <CardHeader>
                 <CardTitle>
                     Recent Image Generations
@@ -49,7 +49,7 @@ const RecentImages = ({images}: RecentImagesProps) => {
     >
       <CarouselContent>
         {images.map((image) => (
-          <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={image.id} className="basis-full md:basis-1/2 lg:basis-1/3">
             <div className='space-y-2'>
                 <div className={cn('relative overflow-hidden rounded-lg', image.height && image.width ? `aspect-[${image.width/image.height}]` : 'aspect-square')}>
                     <Image src={image.url || ''} alt={image.prompt || ""} width={image.width || 100} 

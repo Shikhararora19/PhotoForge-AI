@@ -3,5 +3,11 @@
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/login/page": "app/login/page.js",
   "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(dashboard)/image-generation/page": "app/(dashboard)/image-generation/page.js",
+  "/(dashboard)/gallery/page": "app/(dashboard)/gallery/page.js",
+  "/(dashboard)/models/page": "app/(dashboard)/models/page.js",
+  "/(dashboard)/model-training/page": "app/(dashboard)/model-training/page.js",
+  "/(dashboard)/billing/page": "app/(dashboard)/billing/page.js",
+  "/(dashboard)/account-settings/page": "app/(dashboard)/account-settings/page.js"
 }

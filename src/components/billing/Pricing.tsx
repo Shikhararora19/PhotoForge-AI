@@ -127,7 +127,7 @@ const Pricing = ({
         return router.push(redirectUrl)
     }
   return (  
-    <section className={cn('max-w-7xl mx-auto py-16 px-9 w-full flex flex-col', className)}>
+    <section className={cn('max-w-7xl mx-auto py-16 px-4 sm:px-5 lg:px-9 w-full flex flex-col', className)}>
         {showInterval 
         &&
         <div className='flex justify-center items-center space-x-4 py-8'>
@@ -144,7 +144,7 @@ const Pricing = ({
         }
         
 
-        <div className='grid grid-cols-3 place-items-center mx-auto gap-8 space-y-0'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 place-items-center mx-auto gap-8 space-y-0'>
             {
                 products.map(product => {
                     const price = product?.prices?.find(price => price.interval === billingInterval)
