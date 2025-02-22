@@ -36,7 +36,7 @@ const RecentImages = ({images}: RecentImagesProps) => {
         </Card>
     }
   return (
-    <Card className='col-span-full xL:col-span-3'>
+    <Card className='col-span-full xl:col-span-3'>
             <CardHeader>
                 <CardTitle>
                     Recent Image Generations

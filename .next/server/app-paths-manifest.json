@@ -9,5 +9,6 @@
   "/(dashboard)/models/page": "app/(dashboard)/models/page.js",
   "/(dashboard)/model-training/page": "app/(dashboard)/model-training/page.js",
   "/(dashboard)/billing/page": "app/(dashboard)/billing/page.js",
-  "/(dashboard)/account-settings/page": "app/(dashboard)/account-settings/page.js"
+  "/(dashboard)/account-settings/page": "app/(dashboard)/account-settings/page.js",
+  "/auth/confirm/route": "app/auth/confirm/route.js"
 }
