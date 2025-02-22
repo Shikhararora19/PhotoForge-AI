@@ -30,7 +30,7 @@ const Pricing = ({
     const [billingInterval, setBillingInterval] = useState('month')
     console.log(products)
   return (
-    <section className='w-full bg-muted flex flex-col items-center justify-center'>
+    <section className='w-full bg-muted px-6 xs:px-8 sm:px-0 sm:mx-8 lg:mx-auto flex flex-col items-center justify-center'>
         <div className='w-full container mx-auto py-32 flex flex-col items-center justify-center space-y-8'>
             <div className='text-center flex flex-col items-center justify-center'>
         <AnimatedGradientText>
@@ -57,7 +57,7 @@ const Pricing = ({
             </Label>
         </div>
 
-        <div className='grid grid-cols-3 place-items-center mx-auto gap-8'>
+        <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 place-items-center mx-auto gap-y-8 sm:gap-8 lg:max-w-4xl xl:max-w-none'>
             {
                 products.map(product => {
                     const price = product?.prices?.find(price => price.interval === billingInterval)
