@@ -327,6 +327,7 @@ export type Database = {
         | "incomplete_expired"
         | "past_due"
         | "unpaid"
+        | "paused"
       training_status:
         | "starting"
         | "processing"

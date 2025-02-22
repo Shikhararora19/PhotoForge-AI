@@ -48,6 +48,7 @@ const upsertProductRecord = async (product: Stripe.Product) => {
       interval_count: price.recurring?.interval_count ?? null,
       trial_period_days: price.recurring?.trial_period_days ?? TRIAL_PERIOD_DAYS,
       metadata: price.metadata ?? null,
+      description: price.nickname ?? null,
     };
   
     const { error: upsertError } = await supabaseAdmin
