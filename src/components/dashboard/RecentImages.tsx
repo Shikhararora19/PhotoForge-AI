@@ -15,10 +15,9 @@ import { Button } from '../ui/button'
 import { ArrowRightCircle } from 'lucide-react'
 
 interface RecentImagesProps {
-    images: Array<Tables<'generated_images'>> & {
-        url: string | undefined,
-
-    }
+    images: Array<Tables<'generated_images'> & {
+        url: string | undefined | null,
+    }>
 }
 
 const RecentImages = ({images}: RecentImagesProps) => {
