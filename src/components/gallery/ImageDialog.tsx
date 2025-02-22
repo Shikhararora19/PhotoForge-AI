@@ -48,7 +48,9 @@ const ImageDialog = ({image, onClose}: ImageDialogProps) => {
 
         <div className='flex gap-4 absolute bottom-4 right-4'>
             <Button className='w-fit' onClick={handleDownload}><Download className='w-4 h-4 mr-2'/>Download</Button>
-            <DeleteImage imageId={image.id.toString()} onDelete={onClose} className='w-fit' imageName={image.image_name}/>
+            {image.id && image.image_name && (
+                <DeleteImage imageId={image.id.toString()} onDelete={onClose} className='w-fit' imageName={image.image_name}/>
+            )}
         </div>  
       </div>
       <hr className='inline-block w-full border-primary/30 mb-2'/>
