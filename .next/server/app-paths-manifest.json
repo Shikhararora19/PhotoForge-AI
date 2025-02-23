@@ -10,5 +10,6 @@
   "/(dashboard)/model-training/page": "app/(dashboard)/model-training/page.js",
   "/(dashboard)/billing/page": "app/(dashboard)/billing/page.js",
   "/(dashboard)/account-settings/page": "app/(dashboard)/account-settings/page.js",
-  "/auth/confirm/route": "app/auth/confirm/route.js"
+  "/auth/confirm/route": "app/auth/confirm/route.js",
+  "/api/webhooks/training/route": "app/api/webhooks/training/route.js"
 }
