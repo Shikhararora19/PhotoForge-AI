@@ -48,13 +48,14 @@ Transform your photos with the power of AI! 🤖✨
 ```sh
 git clone https://github.com/your-username/PhotoForge-AI.git
 cd PhotoForge-AI
+```
 
 ### **2️⃣ Install Dependencies**
 ```sh
 npm install
 # or
 yarn install
-
+```
 ### **3️⃣ Set Up Environment Variables**
 ```sh
 # Supabase
@@ -72,14 +73,14 @@ STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 
 # Webhook Secret (for AI Training)
 NEXT_PUBLIC_WEBHOOK_SECRET=your_webhook_secret
-
+```
 ### **4️⃣ Start the Development Server**
 ```sh
 npm run dev
 # or
 yarn dev
 Your app will be available at http://localhost:3000.
-
+```
 ---
 
 ## 🔌 API Routes
