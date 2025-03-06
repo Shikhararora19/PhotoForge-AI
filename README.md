@@ -111,5 +111,6 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ## 📩 Contact
 
 📧 **Email:** shikhar3@ualberta.ca 
+---
 🌐 **Website:** [PhotoForge AI](https://photo-forge-ai.vercel.app/)  
 
