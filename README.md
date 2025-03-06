@@ -1,7 +1,5 @@
 # 🚀 PhotoForge AI - Full Stack AI SaaS Application
 
-![PhotoForge AI](https://your-image-url.com/banner.png)
-
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-13-blue?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
